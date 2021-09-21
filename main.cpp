@@ -4,6 +4,9 @@
 
 using namespace std;
 
+ServerMotor0920::ServerMotor0920(int OOP_Port){
+    this->OOP_Port=OOP_Port;
+}
 void ServerMotor0920::Reset() {//重整
     if (error) {
         volt = 0;
@@ -44,12 +47,10 @@ void ServerMotor0920::Put(int OOP_Port) {//放
 
 int main() {
     //兩邊
-    ServerMotor0920 server1;
-    ServerMotor0920 server2;
-
     int port;//連接埠
     cin >> port;
-    
+    ServerMotor0920 server1(1);
+    ServerMotor0920 server2(port);
     server1.Reset();
     server2.Reset();
     server1.Folder(1);
