@@ -8,6 +8,7 @@ class ServerMotor0920 {
         int OOP_Port;//連接埠
         bool error = false;//是否錯誤
     public:
+        ServerMotor0920(int);
         void Reset();
         void Folder(int);
         void Put(int);
